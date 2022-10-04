@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@500&display=swap');
+
+body {
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  font-family: 'Antonio', sans-serif;
+  overflow: hidden;
+}
+
+#container {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.hide {
+  display: none;
+}
+
+.part1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#part1 {
+  width: 100%;
+  height: 100%;
+  background: url(../images/wanda-bg.png) no-repeat center center fixed;
+  opacity: 1;
+  transition: opacity 2s ease;
+}
+
+#multiverse {
+  position: fixed;
+  color: #fff;
+  top: 2rem;
+  font-size: 3rem;
+  filter: drop-shadow(1px 1px 15px rgb(255, 60, 0)) drop-shadow(1px 1px 30px rgb(180, 29, 18));
+}
+
+#darkhold {
+  padding-top: 15rem;
+  position: fixed;
+  width: 400px;
+  cursor: pointer;
+  animation: float 5s ease-in-out infinite;
+  filter: drop-shadow(1px 1px 15px rgb(71, 17, 1)) drop-shadow(1px 1px 30px rgb(59, 21, 18));
+}
+
+#part1.fade {
+  opacity: 0;
+}
+
+#part2 {
+  opacity: 0;
+}
+
+#part2.show {
+  transition: opacity 2s ease;
+  opacity: 1;
+}
+
+#wanda {
+  height: 600px;
+  animation: float 6s ease-in-out infinite;
+  filter: drop-shadow(1px 1px 15px rgb(255, 60, 0)) drop-shadow(1px 1px 30px rgb(180, 29, 18));
+  cursor: pointer;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 2s ease;
+  background-image: url(../images/Background.jpg);
+  background-size: cover;
+  background-position: center;
+  animation: color-change 15s linear infinite;
+  animation-delay: 1s;
+}
+
+section:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/rain.png);
+  animation: rain 0.4s linear infinite;
+}
+
+@keyframes rain {
+  0% {
+    background-position: 0 0;
+    opacity: 0.3;
+  }
+
+  100% {
+    background-position: 8% 80%;
+    opacity: 0.3;
+  }
+}
+
+@keyframes color-change {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0rem);
+  }
+
+  50% {
+    transform: translatey(-2rem);
+  }
+
+  100% {
+    transform: translatey(0rem);
+  }
+}
+
+.logo {
+  height: 250px;
+  width: 850px;
+}
+
+.title {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  animation: float 10s ease-in-out infinite;
+  filter: drop-shadow(1px 1px 3px rgb(255, 60, 0)) drop-shadow(1px 1px 5px rgb(180, 55, 17));
+}
+
+.titleText {
+  margin: 0px;
+  color: white;
+  font-size: 30px;
+}
+
+#circle1 {
+  -webkit-animation: rotateH 12s linear infinite;
+  -moz-animation: rotateH 12s linear infinite;
+  -ms-animation: rotateH 12s linear infinite;
+  animation: rotateH 12s linear infinite;
+  opacity: 0;
+  filter: drop-shadow(1px 1px 3px rgb(238, 255, 0)) drop-shadow(1px 1px 3px rgb(238, 255, 0));
+  transition: opacity 2s ease;
+  position: absolute;
+}
+
+#circle1.show {
+  opacity: 2;
+}
+
+#circle2 {
+  -webkit-animation: rotateA 7s linear infinite;
+  -moz-animation: rotateA 7s linear infinite;
+  -ms-animation: rotateA 7s linear infinite;
+  animation: rotateA 7s linear infinite;
+  filter: drop-shadow(1px 1px 3px rgb(238, 255, 0)) drop-shadow(1px 1px 3px rgb(238, 255, 0));
+  opacity: 0;
+  transition: opacity 2s ease;
+  position: absolute;
+}
+
+#circle2.show {
+  opacity: 2;
+}
+
+#circle3 {
+  -webkit-animation: rotateH 16s linear infinite;
+  -moz-animation: rotateH 16s linear infinite;
+  -ms-animation: rotateH 16s linear infinite;
+  animation: rotateH 16s linear infinite;
+  filter: drop-shadow(1px 1px 3px rgb(238, 255, 0)) drop-shadow(1px 1px 3px rgb(238, 255, 0));
+  opacity: 0;
+  transition: opacity 2s ease;
+  position: absolute;
+}
+
+#circle3.show {
+  opacity: 2;
+}
+
+@keyframes rotateH {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateA {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+#circles {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  left: 50%;
+  transform: translate(-50%);
+  bottom: 1%;
+}
+
+.circle {
+  max-width: 100%;
+  max-height: 100%;
+}
